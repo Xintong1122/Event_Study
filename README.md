@@ -1,41 +1,120 @@
+# Title
+
+## Authors
+
+### Xintong Wu*
+- **Affiliation:** Duke Kunshan University  
+- **Location:** Suzhou, China  
+- **Email:** [xintong.wu@dukekunshan.edu.cn](mailto:xintong.wu@dukekunshan.edu.cn)  
+- *Co-first authors.*
+
+### Wanlin Deng*
+- **Affiliation:** Duke Kunshan University  
+- **Location:** Suzhou, China  
+- **Email:** [wanlin.deng@dukekunshan.edu.cn](mailto:wanlin.deng@dukekunshan.edu.cn)  
+- *Co-first authors.*
+
+### Yutong Quan
+- **Affiliation:** Columbia University  
+- **Location:** New York, USA  
+- **Email:** [yutong.quan@columbia.edu](mailto:yutong.quan@columbia.edu)  
+
+### Luyao Zhang†
+- **Affiliation:** Duke Kunshan University  
+- **Location:** Suzhou, China  
+- **Email:** [lz183@duke.edu](mailto:lz183@duke.edu)  
+- †Corresponding author.
+
+
+## Abstract
+In the rapidly evolving cryptocurrency landscape, user trust dynamics shape market behaviors and preferences for centralized exchanges (CEXs) and decentralized exchanges (DEXs). The collapse of FTX, a major CEX, marked a critical moment, raising questions about the resilience of centralized trust systems and accelerating shifts toward decentralized alternatives. This research investigates the immediate and nuanced impacts of the FTX collapse on user trust, focusing on token valuation, trading flows, and sentiment dynamics. Employing robust analytical methods, including Regression Discontinuity Design (RDD) and Difference-in-Differences (DID), we reveal significant declines in WETH prices and NetFlow from CEX to DEX, signaling a measurable transfer of trust. Additionally, topic modeling and sentiment analysis expose the complexities of user responses, highlighting shifts from functional discussions to emotional fragmentation in Binance’s community, while Uniswap’s sentiment exhibits a gradual upward trend. Despite data limitations and external influences, the findings underscore the intricate interplay between trust, sentiment, and market behavior in the cryptocurrency ecosystem. This study contributes to interdisciplinary research by bridging blockchain analytics, behavioral finance, and decentralized finance (DeFi). It provides a deeper understanding of distributed trust mechanisms, offering critical insights for future investigations into the socio-technical dimensions of trust in digital economies.
+
 ## Data Dictionary
 
+This document provides a description of the datasets used in the project.
+
+### Dataset 1: WETH Daily Prices
+
+| **Variable Name** | **Description**                 | **Frequency** | **Unit** | **Type**   |
+|--------------------|---------------------------------|---------------|----------|------------|
+| Date               | The date of the price record   | Daily         | Date     | Timestamp  |
+| Price              | Average daily price of WETH    | Daily         | USD      | Numerical  |
+
+---
+
+### Dataset 2: WETH NetFlow Data
+
+| **Variable Name**      | **Description**                                         | **Frequency** | **Unit** | **Type**   |
+|-------------------------|---------------------------------------------------------|---------------|----------|------------|
+| Date                   | The date of the transaction record                      | Daily         | Date     | Timestamp  |
+| USER --> DEX           | Number of users transferring funds to DEX              | Daily         | Count    | Numerical  |
+| USER --> CEX           | Number of users transferring funds to CEX              | Daily         | Count    | Numerical  |
+| Net User               | Net user flow (DEX inflow - CEX inflow)                 | Daily         | Count    | Numerical  |
+| Amount --> DEX         | Total amount of WETH transferred to DEX                 | Daily         | ETH      | Numerical  |
+| Amount --> CEX         | Total amount of WETH transferred to CEX                 | Daily         | ETH      | Numerical  |
+| Net Amount ETH         | Net amount of WETH transferred (DEX - CEX)              | Daily         | ETH      | Numerical  |
+| Amount $ --> DEX       | Total value in USD transferred to DEX                   | Daily         | USD      | Numerical  |
+| Amount $ --> CEX       | Total value in USD transferred to CEX                   | Daily         | USD      | Numerical  |
+| Net Amount $           | Net value in USD transferred (DEX - CEX)                | Daily         | USD      | Numerical  |
+
+---
+
+### Dataset 3: Binance Discord User Messages
+
+| **Variable Name** | **Description**                                | **Frequency** | **Unit**      | **Type**       |
+|--------------------|------------------------------------------------|---------------|---------------|----------------|
+| AuthorID          | Anonymized unique identifier for each user     | Per Message   | Unique ID     | Alphanumeric   |
+| Author            | Username of the message author                 | Per Message   | Text          | Categorical    |
+| Date              | Timestamp of the message                       | Per Message   | Timestamp     | Timestamp      |
+| Content           | Message content                                | Per Message   | Text          | Text           |
+| Attachments       | Attachments (if any) included in the message   | Per Message   | File Reference| Categorical    |
+| Reactions         | Reactions (e.g., emojis) on the message        | Per Message   | Count         | Numerical      |
+
+---
+
+### Dataset 4: Binance Discord User Messages
+
+| **Variable Name** | **Description**                                | **Frequency** | **Unit**      | **Type**       |
+|--------------------|------------------------------------------------|---------------|---------------|----------------|
+| AuthorID          | Anonymized unique identifier for each user     | Per Message   | Unique ID     | Alphanumeric   |
+| Author            | Username of the message author                 | Per Message   | Text          | Categorical    |
+| Date              | Timestamp of the message                       | Per Message   | Timestamp     | Timestamp      |
+| Content           | Message content                                | Per Message   | Text          | Text           |
+| Attachments       | Attachments (if any) included in the message   | Per Message   | File Reference| Categorical    |
+| Reactions         | Reactions (e.g., emojis) on the message        | Per Message   | Count         | Numerical      |
+
+---
+
+### Dataset 5: Gold Prices
+
+| **Variable Name** | **Description**               | **Frequency** | **Unit** | **Type**   |
+|--------------------|-------------------------------|---------------|----------|------------|
+| Date               | The date of the gold price   | Daily         | Date     | Timestamp  |
+| USD                | Price of gold per troy ounce | Daily         | USD      | Numerical  |
+
+---
+
+### Dataset 6: Aggregated Metrics
+
+| **Variable Name**  | **Description**                                          | **Frequency** | **Unit**  | **Type**      |
+|---------------------|----------------------------------------------------------|---------------|-----------|---------------|
+| Date               | The date of the record                                   | Daily         | Date      | Timestamp     |
+| Gold_price         | Daily gold price                                         | Daily         | USD       | Numerical     |
+| Price              | Average daily price of WETH                              | Daily         | USD       | Numerical     |
+| Netflow            | Net fund flow (DEX inflow - CEX inflow)                  | Daily         | USD       | Numerical     |
+| Sentiment_b        | Sentiment score for Binance community                    | Daily         | [-1, 1]   | Numerical     |
+| Label_b            | Sentiment label for Binance community                    | Daily         | Categorical (Positive/Neutral/Negative) |
+| Sentiment_u        | Sentiment score for Uniswap community                    | Daily         | [-1, 1]   | Numerical     |
+| Label_u            | Sentiment label for Uniswap community                    | Daily         | Categorical (Positive/Neutral/Negative) |
+
+---
+
+#### Notes:
+- All timestamps are in UTC.
+- Sentiment scores are derived using a fine-tuned RoBERTa model from Hugging Face.
+- NetFlow calculations are based on inflows and outflows between DEX and CEX platforms.
+
+## Code
 
 
-### Transaction volume of CEX and DEX
-
-| Variable Name    | Description           | Frequency | Unit | Type   | Indirect Data Source | Original Data Source | Cross-Validation Data Source |
-| ---------------- | --------------------- | --------- | ---- | ------ | --------------------- | -------------------- | ---------------------------- |
-| DATE             | Date of transaction   | Daily     | Date | Date   | N/A                   | N/A                  | N/A                          |
-| INFLOW\_USD      | Inflow in USD         | Daily     | USD  | Numeric| N/A                   | N/A                  | N/A                          |
-| OUTFLOW\_USD     | Outflow in USD        | Daily     | USD  | Numeric| N/A                   | N/A                  | N/A                          |
-| TOTAL\_USD\_VOLUME | Total USD Volume    | Daily     | USD  | Numeric| N/A                   | N/A                  | N/A                          |
-
-
-### Transaction between CEX and DEX
-
-| Variable Name          | Description           | Frequency | Unit | Type | Indirect Data Source | Original Data Source | Cross-Validation Data Source |
-|------------------------|-----------------------|-----------|------|------|-----------------------|----------------------|-----------------------------|
-| DATE                   | Date of transfer      | Daily     | Date | Date | N/A                   | N/A                  | N/A                         |
-| N\_TRANSFER            | Number of transfers   | Daily     | Count| Integer | N/A               | N/A                  | N/A                         |
-| USER                   | User identifier      | Daily     | Count | Integer | N/A               | N/A                  | N/A                         |
-| AMOUNT\_USD            | Amount in USD         | Daily     | USD  | Numeric | N/A               | N/A                  | N/A                         |
-| AMOUNT\_ETH            | Amount in ETH         | Daily     | ETH  | Numeric | N/A               | N/A                  | N/A                         |
-| CEX                    | Centralized Exchange  | Daily     | Text | Categorical | N/A        | N/A                  | N/A                         |
-| DEX                    | Decentralized Exchange| Daily     | Text | Categorical | N/A        | N/A                  | N/A                         |
-
-### Netflow between CEX and DEX
-
-| Variable Name         | Description            | Frequency | Unit     | Type    | Indirect Data Source | Original Data Source | Cross-Validation Data Source |
-| --------------------- | ---------------------- | --------- | -------- | ------- | -------------------- | --------------------- | ---------------------------- |
-| DATE                  | Transaction Date       | Daily     | Date     | Date    | N/A                  | N/A                 | N/A                          |
-| USER $\rightarrow$ DEX | User Interaction with DEX | Daily  | Count    | Integer | N/A                  | N/A                 | N/A                          |
-| USER $\rightarrow$ CEX | User Interaction with CEX | Daily  | Count    | Integer | N/A                  | N/A                 | N/A                          |
-| Net User              | Net User Interaction    | Daily     | Count    | Integer | N/A                  | N/A                 | N/A                          |
-| Amount $\rightarrow$ DEX | Amount Related to DEX | Daily | USD      | Numeric | N/A                  | N/A                 | N/A                          |
-| Amount $\rightarrow$ CEX | Amount Related to CEX | Daily | USD      | Numeric | N/A                  | N/A                 | N/A                          |
-| Net Amount ETH        | Net ETH Amount          | Daily     | ETH      | Numeric | N/A                  | N/A                 | N/A                          |
-| Amount \$ $\rightarrow$ DEX | Amount in USD Related to DEX | Daily | USD | Numeric | N/A             | N/A                 | N/A                          |
-| Amount \$ $\rightarrow$ CEX | Amount in USD Related to CEX | Daily | USD | Numeric | N/A             | N/A                 | N/A                          |
-| Net Amount \$         | Net USD Amount          | Daily     | USD      | Numeric | N/A                  | N/A                 | N/A                          |
 
