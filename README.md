@@ -115,6 +115,9 @@ This document provides a description of the datasets used in the project.
 - NetFlow calculations are based on inflows and outflows between DEX and CEX platforms.
 
 ## Code
-
+| **File Name**  | **Description**                                         |
+|---------------------|----------------------------------|
+| Causal_Inference    | Open code for causal inference analysis     |
+| Topic_Analysis      | Open code for causal topic analysis         |
 
 
