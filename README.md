@@ -51,7 +51,7 @@ This document describes the datasets used in the project.
 
 ---
 
-### Dataset 4: Binance Discord User Messages
+### Dataset 4: Uniswap Discord User Messages
 
 | **Variable Name** | **Description**                                | **Frequency** | **Unit**      | **Type**       |
 |--------------------|------------------------------------------------|---------------|---------------|----------------|
