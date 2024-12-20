@@ -1,9 +1,9 @@
 # Trust Dynamics and Market Behavior in Cryptocurrency: A Comparative Study of Centralized and Decentralized Exchanges
 
 ## *Supplementary resources, data, and code*
-by **Xintong Wu***, **Wanlin Deng***, **Yutong Quan** ,and **Luyao Zhang†**
-(* * the co-first authors,
-   † the corresponding author: lz183@duke.edu*)
+by **Xintong Wu**†, **Wanlin Deng**†, **Yutong Quan** ,and **Luyao Zhang***
+(* † the joint first authors,
+   * the corresponding author: lz183@duke.edu*)
    
 ## Abstract
 In the rapidly evolving cryptocurrency landscape, user trust dynamics shape market behaviors and preferences for centralized exchanges (CEXs) and decentralized exchanges (DEXs). The collapse of FTX, a major CEX, marked a critical moment, raising questions about the resilience of centralized trust systems and accelerating shifts toward decentralized alternatives. This research investigates the immediate and nuanced impacts of the FTX collapse on user trust, focusing on token valuation, trading flows, and sentiment dynamics. Employing robust analytical methods, including Regression Discontinuity Design (RDD) and Difference-in-Differences (DID), we reveal significant declines in WETH prices and NetFlow from CEX to DEX, signaling a measurable transfer of trust. Additionally, topic modeling and sentiment analysis expose the complexities of user responses, highlighting shifts from functional discussions to emotional fragmentation in Binance’s community, while Uniswap’s sentiment exhibits a gradual upward trend. Despite data limitations and external influences, the findings underscore the intricate interplay between trust, sentiment, and market behavior in the cryptocurrency ecosystem. This study contributes to interdisciplinary research by bridging blockchain analytics, behavioral finance, and decentralized finance (DeFi). It provides a deeper understanding of distributed trust mechanisms, offering critical insights for future investigations into the socio-technical dimensions of trust in digital economies.
