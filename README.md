@@ -101,7 +101,7 @@ We utilize Large Language Models (LLMs) to perform sentiment extraction from com
 - **Features:** Categorical labels and continuous sentiment scores.
 
 ### Analytical Framework
-- **Topic Modeling:** Utilizing LDA to identify key discussion themes (e.g., Airdrops, Gas Fees).
+- **Topic Modeling:** Utilizing LDA to identify key discussion themes.
 - **Causal Inference:** Implementing Regression Discontinuity Designs (RDD) to validate the impact of community events on token returns.
 - **Feature Integration:** Combining On-chain flows, Off-chain sentiment, and Macro benchmarks (Gold prices).
 
