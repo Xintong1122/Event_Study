@@ -136,6 +136,4 @@ cd Event_Study
 
 This project is licensed under the MIT License. Data sourced from Discord is subject to platform's Terms of Service. This research is for academic purposes and does not constitute financial advice.
 
----
 
-📧 For inquiries, contact us at: [lz183@duke.edu](mailto:lz183@duke.edu)
