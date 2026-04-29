@@ -2,7 +2,7 @@
 
 ## 📘 Supplementary Resources, Data, and Code
 
-by **Xintong Wu**†, **Wanlin Deng**†, **Yutong Quan**, and **Luyao Zhang***  
+by **Xintong Wu**†, **Wanlin Deng**†, **Yutong Quan**, **Lin William Cong**, and **Luyao Zhang***  
 (*† Joint first authors, * Corresponding author: [lz183@duke.edu](mailto:lz183@duke.edu)*)
 
 ---
