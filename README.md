@@ -7,29 +7,7 @@
 
 Supplementary resources, data, and code for the research paper investigating Ethereum price movements through community sentiment, capital flows, and macroeconomic indicators.
 
-## Table of Contents
 
-- [Quick Start](#quick-start)
-- [Abstract](#abstract)
-- [Methodology](#methodology)
-- [Repository Structure](#repository-structure)
-- [Data](#data)
-  - [Financial & Flow Data](#financial--flow-data)
-  - [Social Sentiment Data](#social-sentiment-data)
-- [Code](#code)
-- [Spotlight Visualizations](#spotlight-visualizations)
-- [License](#license)
-
-## Quick Start
-
-```bash
-# Clone repository
-git clone https://github.com/Xintong1122/Event_Study.git
-cd Event_Study
-
-# Note: Large raw Discord data files are split. 
-# Please merge Binance_raw1.csv, raw2.csv, and raw3.csv before processing.
-```
 ## Repository Structure
 
 ```text
@@ -65,31 +43,19 @@ ETH_Multimodal_Analysis/
 └── README.md
 ```
 
-## 📄 Abstract
+## Quick Start
 
-In the rapidly evolving cryptocurrency landscape, user trust dynamics shape market behaviors and preferences for centralized exchanges (CEXs) and decentralized exchanges (DEXs). The collapse of FTX, a major CEX, marked a critical moment, raising questions about the resilience of centralized trust systems and accelerating shifts toward decentralized alternatives.
+```bash
+# Clone repository
+git clone https://github.com/Xintong1122/Event_Study.git
+cd Event_Study
 
-This research investigates the immediate and nuanced impacts of the FTX collapse on user trust, focusing on token valuation, trading flows, and sentiment dynamics. Employing robust analytical methods, including Regression Discontinuity Design (RDD) and Difference-in-Differences (DID), we reveal significant declines in WETH prices and NetFlow from CEX to DEX, signaling a measurable transfer of trust.
-
-Additionally, topic modeling and sentiment analysis expose the complexities of user responses, highlighting shifts from functional discussions to emotional fragmentation in Binance’s community, while Uniswap’s sentiment exhibits a gradual upward trend. Despite data limitations and external influences, the findings underscore the intricate interplay between trust, sentiment, and market behavior in the cryptocurrency ecosystem.
-
-## Methodology
-
-### Sentiment Analysis Pipeline
-We utilize Large Language Models (LLMs) to perform sentiment extraction from community discussions.
-- **Model:** Fine-tuned Transformer-based architecture for crypto-specific sentiment.
-- **Classes:** Positive, Neutral, Negative.
-- **Features:** Categorical labels and continuous sentiment scores.
-
-### Analytical Framework
-- **Topic Modeling:** Utilizing LDA to identify key discussion themes.
-- **Causal Inference:** Implementing Regression Discontinuity Designs (RDD) to validate the impact of community events on token returns.
-- **Feature Integration:** Combining On-chain flows, Off-chain sentiment, and Macro benchmarks (Gold prices).
-
+# Note: Large raw Discord data files are split. 
+# Please merge Binance_raw1.csv, raw2.csv, and raw3.csv before processing.
+```
 
 
 ## 📚 Data Dictionary
-
 
 
 ### Financial & Flow Data
