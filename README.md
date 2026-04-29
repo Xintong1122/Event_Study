@@ -1,56 +1,3 @@
-# Trust Dynamics and Market Behavior in Cryptocurrency: A Comparative Study of Centralized and Decentralized Exchanges
-
-## 📘 Supplementary Resources, Data, and Code
-
-by **Xintong Wu**†, **Wanlin Deng**†, **Yutong Quan**, **Lin William Cong**, and **Luyao Zhang***  
-(*† Joint first authors, * Corresponding author: [lz183@duke.edu](mailto:lz183@duke.edu)*)
-
----
-
-## 📄 Abstract
-
-In the rapidly evolving cryptocurrency landscape, user trust dynamics shape market behaviors and preferences for centralized exchanges (CEXs) and decentralized exchanges (DEXs). The collapse of FTX, a major CEX, marked a critical moment, raising questions about the resilience of centralized trust systems and accelerating shifts toward decentralized alternatives.
-
-This research investigates the immediate and nuanced impacts of the FTX collapse on user trust, focusing on token valuation, trading flows, and sentiment dynamics. Employing robust analytical methods, including Regression Discontinuity Design (RDD) and Difference-in-Differences (DID), we reveal significant declines in WETH prices and NetFlow from CEX to DEX, signaling a measurable transfer of trust.
-
-Additionally, topic modeling and sentiment analysis expose the complexities of user responses, highlighting shifts from functional discussions to emotional fragmentation in Binance’s community, while Uniswap’s sentiment exhibits a gradual upward trend. Despite data limitations and external influences, the findings underscore the intricate interplay between trust, sentiment, and market behavior in the cryptocurrency ecosystem.
-
----
-
-## 📚 Data Dictionary
-
-### 📈 Dataset 1: WETH Daily Prices
-
-| **Variable Name** | **Description**               | **Frequency** | **Unit** | **Type**     |
-|--------------------|-------------------------------|---------------|----------|--------------|
-| Date              | The date of the price record | Daily         | Date     | Timestamp    |
-| Price             | Average daily price of WETH  | Daily         | USD      | Numerical    |
-
----
-
-### 💸 Dataset 2: WETH NetFlow Data
-
-| **Variable Name**  | **Description**                                        | **Frequency** | **Unit** | **Type**     |
-|---------------------|--------------------------------------------------------|---------------|----------|--------------|
-| Date               | The date of the transaction record                     | Daily         | Date     | Timestamp    |
-| USER --> DEX       | Number of users transferring funds to DEX              | Daily         | Count    | Numerical    |
-| USER --> CEX       | Number of users transferring funds to CEX              | Daily         | Count    | Numerical    |
-| Net User           | Net user flow (DEX inflow - CEX inflow)                | Daily         | Count    | Numerical    |
-| Amount --> DEX     | Total amount of WETH transferred to DEX                | Daily         | ETH      | Numerical    |
-| Amount --> CEX     | Total amount of WETH transferred to CEX                | Daily         | ETH      | Numerical    |
-| Net Amount ETH     | Net amount of WETH transferred (DEX - CEX)             | Daily         | ETH      | Numerical    |
-
----
-
-## 💻 Code
-
-| **File Name**      | **Description**                       |
-|--------------------|---------------------------------------|
-| Causal_Inference   | Open code for causal inference analysis |
-| Topic_Analysis     | Open code for causal topic analysis     |
-
----
-
 # Trust Dynamics in Cryptocurrency Markets: Centralized vs. Decentralized Exchanges
 
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
@@ -83,28 +30,6 @@ cd Event_Study
 # Note: Large raw Discord data files are split. 
 # Please merge Binance_raw1.csv, raw2.csv, and raw3.csv before processing.
 ```
-
-## Abstract
-
-add abstract
-
-**Research Questions:**
-- RQ1
-- RQ2
-
-## Methodology
-
-### Sentiment Analysis Pipeline
-We utilize Large Language Models (LLMs) to perform sentiment extraction from community discussions.
-- **Model:** Fine-tuned Transformer-based architecture for crypto-specific sentiment.
-- **Classes:** Positive, Neutral, Negative.
-- **Features:** Categorical labels and continuous sentiment scores.
-
-### Analytical Framework
-- **Topic Modeling:** Utilizing LDA to identify key discussion themes.
-- **Causal Inference:** Implementing Regression Discontinuity Designs (RDD) to validate the impact of community events on token returns.
-- **Feature Integration:** Combining On-chain flows, Off-chain sentiment, and Macro benchmarks (Gold prices).
-
 ## Repository Structure
 
 ```text
@@ -140,7 +65,32 @@ ETH_Multimodal_Analysis/
 └── README.md
 ```
 
-## Data
+## 📄 Abstract
+
+In the rapidly evolving cryptocurrency landscape, user trust dynamics shape market behaviors and preferences for centralized exchanges (CEXs) and decentralized exchanges (DEXs). The collapse of FTX, a major CEX, marked a critical moment, raising questions about the resilience of centralized trust systems and accelerating shifts toward decentralized alternatives.
+
+This research investigates the immediate and nuanced impacts of the FTX collapse on user trust, focusing on token valuation, trading flows, and sentiment dynamics. Employing robust analytical methods, including Regression Discontinuity Design (RDD) and Difference-in-Differences (DID), we reveal significant declines in WETH prices and NetFlow from CEX to DEX, signaling a measurable transfer of trust.
+
+Additionally, topic modeling and sentiment analysis expose the complexities of user responses, highlighting shifts from functional discussions to emotional fragmentation in Binance’s community, while Uniswap’s sentiment exhibits a gradual upward trend. Despite data limitations and external influences, the findings underscore the intricate interplay between trust, sentiment, and market behavior in the cryptocurrency ecosystem.
+
+## Methodology
+
+### Sentiment Analysis Pipeline
+We utilize Large Language Models (LLMs) to perform sentiment extraction from community discussions.
+- **Model:** Fine-tuned Transformer-based architecture for crypto-specific sentiment.
+- **Classes:** Positive, Neutral, Negative.
+- **Features:** Categorical labels and continuous sentiment scores.
+
+### Analytical Framework
+- **Topic Modeling:** Utilizing LDA to identify key discussion themes.
+- **Causal Inference:** Implementing Regression Discontinuity Designs (RDD) to validate the impact of community events on token returns.
+- **Feature Integration:** Combining On-chain flows, Off-chain sentiment, and Macro benchmarks (Gold prices).
+
+
+
+## 📚 Data Dictionary
+
+
 
 ### Financial & Flow Data
 
@@ -150,12 +100,35 @@ ETH_Multimodal_Analysis/
 | Date     | Trading date (YYYY/MM/DD) |
 | Price    | ETH daily closing price |
 
+ 📈 Dataset 1: WETH Daily Prices
+
+| **Variable Name** | **Description**               | **Frequency** | **Unit** | **Type**     |
+|--------------------|-------------------------------|---------------|----------|--------------|
+| Date              | The date of the price record | Daily         | Date     | Timestamp    |
+| Price             | Average daily price of WETH  | Daily         | USD      | Numerical    |
+
+
+
+
 #### 2_NetFlow.csv (Inter-platform flows)
 | Variable | Description |
 |----------|-------------|
 | Net User | Net change in users (USER -> DEX vs USER -> CEX) |
 | Net Amount | Net ETH flow between DEX and CEX |
 | Net Amount $ | Net USD value flow |
+
+💸 Dataset 2: WETH NetFlow Data
+
+| **Variable Name**  | **Description**                                        | **Frequency** | **Unit** | **Type**     |
+|---------------------|--------------------------------------------------------|---------------|----------|--------------|
+| Date               | The date of the transaction record                     | Daily         | Date     | Timestamp    |
+| USER --> DEX       | Number of users transferring funds to DEX              | Daily         | Count    | Numerical    |
+| USER --> CEX       | Number of users transferring funds to CEX              | Daily         | Count    | Numerical    |
+| Net User           | Net user flow (DEX inflow - CEX inflow)                | Daily         | Count    | Numerical    |
+| Amount --> DEX     | Total amount of WETH transferred to DEX                | Daily         | ETH      | Numerical    |
+| Amount --> CEX     | Total amount of WETH transferred to CEX                | Daily         | ETH      | Numerical    |
+| Net Amount ETH     | Net amount of WETH transferred (DEX - CEX)             | Daily         | ETH      | Numerical    |
+
 
 #### Gold_price_per_troy_ounce.csv
 | Variable | Description |
@@ -195,7 +168,7 @@ ETH_Multimodal_Analysis/
 
 ## License
 
-This project is licensed under the MIT License. Data sourced from Discord is subject to platform Terms of Service. This research is for academic purposes and does not constitute financial advice.
+This project is licensed under the MIT License. Data sourced from Discord is subject to platform's Terms of Service. This research is for academic purposes and does not constitute financial advice.
 
 ---
 
